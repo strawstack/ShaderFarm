@@ -2,6 +2,9 @@ const fs = require("fs");
 const shaderPath = __dirname + "./../src/shaders";
 
 fs.readdir(shaderPath, async function(err, files) {
+    
+    console.log(err);
+    
     let data = [];
     for (let i=0; i < files.length; i++) {
         data.push({
