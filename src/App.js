@@ -4,7 +4,7 @@ import ContentRows from './ContentRows.js';
 function App() {
   return (
     <div className={styles.App}>
-      <a href="https://richard.dev" target="_blank">
+      <a href="https://richard.dev" target="_blank" rel="noreferrer">
         <div className={styles.CreatedBy}>richard.dev</div>
       </a>
       <div className={styles.PageArea}>
@@ -18,7 +18,7 @@ function App() {
           </div>
           <ContentRows />
           <div className={styles.GithubBanner}>
-                <p>Code available on <a href="https://github.com/strawstack/FragShaderTemplate" target="_blank">Github</a></p>
+                <p>Code available on <a href="https://github.com/strawstack/FragShaderTemplate" target="_blank" rel="noreferrer">Github</a></p>
             </div>          
         </div>
       </div>
