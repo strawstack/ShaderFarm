@@ -1,0 +1,16 @@
+/* Content Rows */
+.ContentRows {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+    grid-row-gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Narrow screens */
+@media screen and (max-width: 850px) {
+    .ContentRows {
+        grid-auto-rows: auto;
+        row-gap: 40px;
+    }
+}

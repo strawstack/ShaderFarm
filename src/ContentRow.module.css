@@ -1,0 +1,72 @@
+/* Content Row */
+.ContentRow {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 'a b';
+    grid-column-gap: 10px;
+}
+.ContentRow:nth-child(2n) {
+    grid-template-columns: 1fr 300px;
+}
+.ShaderDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #555;
+}
+.CodeContainer {
+    position: relative;
+    background: #555;
+    overflow: hidden;
+    font-family: monospace;
+}
+.CodeDisplay {
+    position: absolute;
+    white-space: pre;
+    padding: 10px;
+    top: 0px; left: 0px; bottom: 0px; right: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.ContentRow:nth-child(2n)>.ShaderDisplay {
+    grid-area: b;
+}
+.ContentRow:nth-child(2n)>.CodeDisplay {
+    grid-area: a;
+}
+.UpdateBtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 80px;
+    right: 20px;
+    bottom: 0px;
+    background: #777;
+    transition: height 0.5s, background 0.5s;
+}
+.UpdateBtn:hover {
+    background: #7F7F7F;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Narrow screens */
+@media screen and (max-width: 850px) {
+    .ContentRow, .ContentRow:nth-child(2n) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 320px 300px;
+        grid-row-gap: 10px;
+        grid-column-gap: 0px;
+        grid-template-areas: 'a' 'b';
+    }
+    .ContentRow:nth-child(2n)>.ShaderDisplay {
+        grid-area: a;
+    }
+    .ContentRow:nth-child(2n)>.CodeDisplay {
+        grid-area: b;
+    }
+}
